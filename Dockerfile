@@ -28,4 +28,4 @@ COPY ./config/supervisord.conf /etc/supervisord.conf
 
 EXPOSE 9000
 
-CMD /usr/bin/supervisord -n -c /etc/supervisord.conf
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
