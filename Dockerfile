@@ -5,6 +5,7 @@ MAINTAINER  Julian Ospald <hasufell@gentoo.org>
 
 # copy paludis config
 COPY ./config/paludis /etc/paludis
+COPY ./config/local-overlay /usr/local-overlay
 
 # update world with our USE flags
 RUN chgrp paludisbuild /dev/tty && cave resolve -c world -x
