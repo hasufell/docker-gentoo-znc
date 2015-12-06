@@ -5,7 +5,12 @@ MAINTAINER  Julian Ospald <hasufell@gentoo.org>
 
 # copy paludis config
 COPY ./config/paludis /etc/paludis
-COPY ./config/local-overlay /usr/local-overlay
+
+# install necessary overlays
+RUN git clone --depth=1 https://github.com/hasufell/prism-overlay.git \
+	/usr/prism-overlay
+RUN chgrp paludisbuild /dev/tty && cave sync prism-overlay
+RUN eix-update
 
 # update world with our USE flags
 RUN chgrp paludisbuild /dev/tty && cave resolve -c world -x
