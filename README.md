@@ -1,7 +1,7 @@
 ## Installation
 
 ```sh
-docker build -t hasufell/gentoo-znc .
+docker build -t mosaiksoftware/gentoo-znc .
 ```
 
 ## Configuration
@@ -39,7 +39,7 @@ docker run -ti -d \
 	-v <config-folder>:/var/lib/znc \
 	-v <cert-folder>:/etc/ssl/znc \
 	-p 9000:9000 \
-	hasufell/gentoo-znc
+	mosaiksoftware/gentoo-znc
 ```
 
 
